@@ -23,7 +23,7 @@ namespace SecurityApplication.View
             // Check username or password is null or not
             if ((string.IsNullOrWhiteSpace(username)) || (string.IsNullOrWhiteSpace(password)))
             {
-                MessageBox.Show(ConstantVariable.MESAGE_ERROR_EMPTY, @"WARNING", MessageBoxButtons.OK,
+                MessageBox.Show(ConstantVariable.MesageErrorEmpty, @"WARNING", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
 
@@ -54,13 +54,13 @@ namespace SecurityApplication.View
 
                     else if (0 == compareNum)
                     {
-                        MessageBox.Show(ConstantVariable.MESAGE_ERROR_ACCOUNT, @"ERROR", MessageBoxButtons.OK,
+                        MessageBox.Show(ConstantVariable.MesageErrorAccount, @"ERROR", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
 
                     else if (2 == compareNum)
                     {
-                        MessageBox.Show(ConstantVariable.MESAGE_ERROR_PASSWORD, @"WARNING", MessageBoxButtons.OK,
+                        MessageBox.Show(ConstantVariable.MesageErrorPassword, @"WARNING", MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
                     }
                 }

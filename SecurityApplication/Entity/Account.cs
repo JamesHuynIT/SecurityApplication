@@ -8,8 +8,14 @@
             Password = password;
         }
 
-        private string Username { get; set; }
-        private string Password { get; set; }
+        public Account()
+        {
+            Username = "";
+            Password = "";
+        }
+
+        private string Username { get; }
+        private string Password { get; }
 
         /*
          * Function Compare Account
@@ -23,11 +29,7 @@
         {
             if (account.Username.Equals(Username))
             {
-                if (account.Password.Equals(Password))
-                {
-                    return 1;
-                }
-                return 2;
+                return account.Password.Equals(Password) ? 1 : 2;
             }
             return 0;
         }

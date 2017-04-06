@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO.Ports;
 using System.Windows.Forms;
 using SecurityApplication.Util;
@@ -30,15 +29,14 @@ namespace SecurityApplication.View
         {
             _serialPort = new SerialPort
             {
-                BaudRate = ConstantVariable.BAUDRATE,
-                PortName = ConstantVariable.PORTNAME
+                BaudRate = ConstantVariable.Baudrate,
+                PortName = ConstantVariable.Portname
             };
             _serialPort.Open();
         }
 
         private void MainFrame_Load(object sender, EventArgs e)
         {
-           
         }
 
         private void btnBackward_Click(object sender, EventArgs e)
@@ -59,7 +57,7 @@ namespace SecurityApplication.View
 
         private void addNewCarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddCarFrame addCarFrame = new AddCarFrame();
+            var addCarFrame = new AddCarFrame();
             addCarFrame.ShowDialog();
         }
     }
