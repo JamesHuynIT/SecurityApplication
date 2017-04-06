@@ -15,6 +15,9 @@
         // Query Account
         public static string QueryAccount = "SELECT * FROM ACCOUNT";
 
+        // Query Count Account
+        public static string QueryCountAccount = "SELECT COUNT(*) FROM ACCOUNT";
+
         // Query Find Account
         public static string QueryFindAccount = "SELECT * FROM ACCOUNT WHERE USERNAME=@USERNAME";
 

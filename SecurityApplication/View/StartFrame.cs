@@ -33,7 +33,7 @@ namespace SecurityApplication.View
                 var database = new Database();
 
                 // Load account from database
-                var accountList = database.LoadAccount();
+                var accountDatabase = database.FindAccount(username);
 
                 // Parse into Account
                 var account = new Account(username, password);
@@ -42,27 +42,24 @@ namespace SecurityApplication.View
                 // if compareNum = 1: Login correct
                 // if compareNum = 2: Password incorrect
                 // if compareNum = 0: Account doesn't exist
-                foreach (var ac in accountList)
+                var compareNum = account.CompareAccount(accountDatabase);
+                if (1 == compareNum)
                 {
-                    var compareNum = account.CompareAccount(ac);
-                    if (1 == compareNum)
-                    {
-                        var mainFrame = new MainFrame();
-                        Hide();
-                        mainFrame.ShowDialog();
-                    }
+                    var mainFrame = new MainFrame();
+                    Hide();
+                    mainFrame.ShowDialog();
+                }
 
-                    else if (0 == compareNum)
-                    {
-                        MessageBox.Show(ConstantVariable.MesageErrorAccount, @"ERROR", MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                    }
+                else if (0 == compareNum)
+                {
+                    MessageBox.Show(ConstantVariable.MesageErrorAccount, @"ERROR", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
 
-                    else if (2 == compareNum)
-                    {
-                        MessageBox.Show(ConstantVariable.MesageErrorPassword, @"WARNING", MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                    }
+                else if (2 == compareNum)
+                {
+                    MessageBox.Show(ConstantVariable.MesageErrorPassword, @"WARNING", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                 }
             }
         }

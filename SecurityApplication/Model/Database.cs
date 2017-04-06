@@ -139,5 +139,46 @@ namespace SecurityApplication.Model
 
             return account;
         }
+
+        public int CountAccount()
+        {
+            // Count Number of Account
+            int count = 0;
+
+            // Prepare the query
+            var commandDatabase = new MySqlCommand(ConstantVariable.QueryCountAccount, DatabaseConnection);
+
+            try
+            {
+                // Open Database
+                OpenDatabase();
+
+                // Execute the query
+                _reader = commandDatabase.ExecuteReader();
+
+                if (_reader.HasRows)
+                {
+                    while (_reader.Read())
+                    {
+                        //ID 0, USERNAME 1, PASSWORD 2
+                        count = _reader.GetInt16(0);
+                    }
+                }
+
+                // Close Database
+                CloseDatabase();
+            }
+
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message, @"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // Log to file database
+                LogApp.LogDatabaseError(ex.Message);
+            }
+
+            return count;
+        }
     }
 }

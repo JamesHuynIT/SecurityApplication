@@ -1,0 +1,4 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/CoverageSessionsPersistenceManagerSettings/SessionPersistentData/=4F2316B356FB48C18882FCDB60D34E16/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/CoverageSessionsPersistenceManagerSettings/SessionPersistentData/=4F2316B356FB48C18882FCDB60D34E16/SnapshotLocation/@EntryValue">C:\Users\NhanH\AppData\Local\Temp\ssm.Fylagep.tmp</s:String>
+	<s:String x:Key="/Default/CoverageSessionsPersistenceManagerSettings/SessionPersistentData/=4F2316B356FB48C18882FCDB60D34E16/ProductVersion/@EntryValue">3.2</s:String></wpf:ResourceDictionary>

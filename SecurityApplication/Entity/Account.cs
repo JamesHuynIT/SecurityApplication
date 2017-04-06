@@ -24,7 +24,6 @@
          *  1: Account correct
          *  2: Wrong password
          */
-
         public int CompareAccount(Account account)
         {
             if (account.Username.Equals(Username))
@@ -32,6 +31,16 @@
                 return account.Password.Equals(Password) ? 1 : 2;
             }
             return 0;
+        }
+
+        public override bool Equals(object obj)
+        {
+            Account account = new Account(Username, Password);
+            if (1 == account.CompareAccount((Account)obj))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

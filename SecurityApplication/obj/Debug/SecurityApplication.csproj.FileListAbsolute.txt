@@ -1,8 +1,8 @@
+D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\EntityFramework.dll
+D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\EntityFramework.SqlServer.dll
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\SecurityApplication.exe.config
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\SecurityApplication.exe
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\SecurityApplication.pdb
-D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\EntityFramework.dll
-D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\EntityFramework.SqlServer.dll
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\MySql.Data.dll
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\MySql.Data.Entity.dll
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\MySql.Data.Entity.EF6.dll
