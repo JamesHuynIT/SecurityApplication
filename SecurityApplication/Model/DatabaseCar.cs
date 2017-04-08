@@ -181,9 +181,9 @@ namespace SecurityApplication.Model
                 DatabaseConnect.OpenDatabase();
 
                 // Execute the query
-                var reader = commandDatabase.ExecuteReader();
+                var reader = commandDatabase.ExecuteNonQuery();
 
-                if (reader.HasRows)
+                if (1 == reader)
                 {
                     insertBool = true;
                 }

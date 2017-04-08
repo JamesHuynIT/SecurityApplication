@@ -21,3 +21,5 @@ D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\SecurityApplication.
 D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\SecurityApplication.csproj.GenerateResource.Cache
 D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\SecurityApplication.exe
 D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\SecurityApplication.pdb
+D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\SecurityApplication.pdb
+D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\SecurityApplication.csprojResolveAssemblyReference.cache

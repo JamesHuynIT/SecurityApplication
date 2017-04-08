@@ -23,7 +23,7 @@ namespace SecurityApplication.View
             var hostName = txtHostName.Text;
             var displayName = txtDisplayName.Text;
             var userName = txtUserName.Text;
-            var password = Md5Convert.Md5Parse(txtHostName.Text);
+            var password = Md5Convert.Md5Parse(txtPassword.Text);
 
             var car = new Car(hostName, displayName, userName, password);
 
@@ -34,12 +34,15 @@ namespace SecurityApplication.View
             {
                 MessageBox.Show(ConstantVariable.MesageInformation, @"INFORMATION", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                Close();
+                txtHostName.ResetText();
+                txtDisplayName.ResetText();
+                txtUserName.ResetText();
+                txtPassword.ResetText();
             }
             else
             {
-                MessageBox.Show(ConstantVariable.MesageInformation, @"INFORMATION", MessageBoxButtons.OK,
-                   MessageBoxIcon.Information);
+                MessageBox.Show(ConstantVariable.MesageInsertError, @"ERROR", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
             }
 
         }
