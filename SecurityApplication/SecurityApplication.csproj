@@ -78,6 +78,7 @@
     <Compile Include="Model\DatabaseConnect.cs" />
     <Compile Include="Util\ConstantVariable.cs" />
     <Compile Include="Util\LogApp.cs" />
+    <Compile Include="Util\Md5Convert.cs" />
     <Compile Include="View\AddCarFrame.cs">
       <SubType>Form</SubType>
     </Compile>

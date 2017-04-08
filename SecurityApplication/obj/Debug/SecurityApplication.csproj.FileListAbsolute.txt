@@ -1,16 +1,15 @@
+D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\SecurityApplication.exe
+D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\MySql.Data.dll
+D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\Interop.AXVLC.dll
+D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\AxInterop.AXVLC.dll
+D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\SecurityApplication.exe.config
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\EntityFramework.dll
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\EntityFramework.SqlServer.dll
-D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\SecurityApplication.exe.config
-D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\SecurityApplication.exe
-D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\SecurityApplication.pdb
-D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\MySql.Data.dll
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\MySql.Data.Entity.dll
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\MySql.Data.Entity.EF6.dll
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\MySql.Web.dll
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\EntityFramework.xml
 D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\EntityFramework.SqlServer.xml
-D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\Interop.AXVLC.dll
-D:\GitHub\SecurityApplication\SecurityApplication\bin\Debug\AxInterop.AXVLC.dll
 D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\SecurityApplication.csproj.SecurityApplication.exe.config
 D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\Interop.AXVLC.dll
 D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\AxInterop.AXVLC.dll
@@ -22,4 +21,3 @@ D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\SecurityApplication.
 D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\SecurityApplication.csproj.GenerateResource.Cache
 D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\SecurityApplication.exe
 D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\SecurityApplication.pdb
-D:\GitHub\SecurityApplication\SecurityApplication\obj\Debug\SecurityApplication.csprojResolveAssemblyReference.cache

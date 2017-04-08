@@ -19,15 +19,16 @@ namespace SecurityApplication.Model
         /// <summary>
         /// Function Find Car in database by uisng carName
         /// </summary>
-        /// <param name="carname"></param>
+        /// <param name="username"></param>
         /// <returns></returns>
-        public Car FindCar(string carname)
+        public Car FindCar(string username)
         {
             var car = new Car();
 
             // Prepare the query
             var commandDatabase = new MySqlCommand(ConstantVariable.QueryFindCar, DatabaseConnect.DatabaseConnection);
-            commandDatabase.Parameters.AddWithValue("@CARNAME", carname);
+            commandDatabase.Parameters.AddWithValue("@USERNAME", username);
+
             try
             {
                 // Open Database
@@ -40,12 +41,13 @@ namespace SecurityApplication.Model
                 {
                     while (reader.Read())
                     {
-                        //ID 0, USERNAME 1, PASSWORD 2
-                        var carId = reader.GetString(1);
-                        var carName = reader.GetString(2);
-                        var carPort = reader.GetInt16(3);
+                        //ID 0, HOSTNAME 1, DISPLAYNAME 2, USERNAME 3, PASSWORD 4
+                        var hostName = reader.GetString(1);
+                        var displayName = reader.GetString(2);
+                        var userName = reader.GetString(3);
+                        var password = reader.GetString(4);
 
-                        car = new Car(carId, carName, carPort);
+                        car = new Car(hostName, displayName, userName, password);
                     }
                 }
 
@@ -86,12 +88,13 @@ namespace SecurityApplication.Model
                 {
                     while (reader.Read())
                     {
-                        //ID 0, USERNAME 1, PASSWORD 2
-                        var carId = reader.GetString(1);
-                        var carName = reader.GetString(2);
-                        var carPort = reader.GetInt16(3);
+                        //ID 0, HOSTNAME 1, DISPLAYNAME 2, USERNAME 3, PASSWORD 4
+                        var hostName = reader.GetString(1);
+                        var displayName = reader.GetString(2);
+                        var userName = reader.GetString(3);
+                        var password = reader.GetString(4);
 
-                        var car = new Car(carId, carName, carPort);
+                        var car = new Car(hostName, displayName, userName, password);
                         carList.Add(car);
                     }
                 }
@@ -160,10 +163,17 @@ namespace SecurityApplication.Model
         /// Function Add New Car to database
         /// </summary>
         /// <param name="newCar"></param>
-        public void AddNewCar(Car newCar)
+        public bool AddNewCar(Car newCar)
         {
             // Prepare the query
             var commandDatabase = new MySqlCommand(ConstantVariable.QueryAddNewCar, DatabaseConnect.DatabaseConnection);
+            commandDatabase.Parameters.AddWithValue("@HOST_NAME", newCar.HostName);
+            commandDatabase.Parameters.AddWithValue("@DISPLAY_NAME", newCar.DisplayName);
+            commandDatabase.Parameters.AddWithValue("@USERNAME", newCar.UserName);
+            commandDatabase.Parameters.AddWithValue("@PASSWORD", newCar.Password);
+
+            // Insert success or not
+            var insertBool = false;
 
             try
             {
@@ -175,15 +185,13 @@ namespace SecurityApplication.Model
 
                 if (reader.HasRows)
                 {
-                    while (reader.Read())
-                    {
-                        //ID 0, USERNAME 1, PASSWORD 2
-                        //count = reader.GetInt16(0);
-                    }
+                    insertBool = true;
                 }
 
                 // Close Database
                 DatabaseConnect.CloseDatabase();
+
+                return insertBool;
             }
 
             catch (Exception ex)
@@ -193,6 +201,8 @@ namespace SecurityApplication.Model
 
                 // Log to file database
                 LogApp.LogDatabaseError(ex.Message);
+
+                return false;
             }
         }
     }

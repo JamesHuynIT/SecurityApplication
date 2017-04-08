@@ -36,9 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtHostName = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDisplayName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -51,6 +51,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnReset
             // 
@@ -107,12 +108,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Password";
             // 
-            // textBox1
+            // txtHostName
             // 
-            this.textBox1.Location = new System.Drawing.Point(164, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 22);
-            this.textBox1.TabIndex = 7;
+            this.txtHostName.Location = new System.Drawing.Point(164, 91);
+            this.txtHostName.Name = "txtHostName";
+            this.txtHostName.Size = new System.Drawing.Size(239, 22);
+            this.txtHostName.TabIndex = 7;
             // 
             // txtUserName
             // 
@@ -121,12 +122,12 @@
             this.txtUserName.Size = new System.Drawing.Size(239, 22);
             this.txtUserName.TabIndex = 8;
             // 
-            // textBox3
+            // txtDisplayName
             // 
-            this.textBox3.Location = new System.Drawing.Point(164, 152);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(239, 22);
-            this.textBox3.TabIndex = 9;
+            this.txtDisplayName.Location = new System.Drawing.Point(164, 152);
+            this.txtDisplayName.Name = "txtDisplayName";
+            this.txtDisplayName.Size = new System.Drawing.Size(239, 22);
+            this.txtDisplayName.TabIndex = 9;
             // 
             // txtPassword
             // 
@@ -134,6 +135,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(239, 22);
             this.txtPassword.TabIndex = 10;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -154,9 +156,9 @@
             this.ControlBox = false;
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDisplayName);
             this.Controls.Add(this.txtUserName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtHostName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -167,6 +169,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddCarFrame";
             this.Text = "Add Car - Security Application";
+            this.Load += new System.EventHandler(this.AddCarFrame_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,9 +184,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtHostName;
         private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDisplayName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label5;
     }
