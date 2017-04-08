@@ -30,7 +30,7 @@ namespace SecurityApplication.View
             // if not null do next
             else
             {
-                var database = new Database();
+                var database = new DatabaseAccount();
 
                 // Load account from database
                 var accountDatabase = database.FindAccount(username);

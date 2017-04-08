@@ -6,41 +6,16 @@ using SecurityApplication.Entity;
 using SecurityApplication.Util;
 
 /**
- *  Class Database is class call connect to MySQL database 
+ *  Class Database Account is class call connect to MySQL database table account
  *  and query data in table
  *  Author: NhanHTT
  *  Version: 1.0
  *  Date: 04/01/2017
  */
-
 namespace SecurityApplication.Model
 {
-    public class Database
+    public class DatabaseAccount
     {
-        // Prepare the connection
-        private static readonly MySqlConnection DatabaseConnection = new MySqlConnection(ConstantVariable.Connectstring);
-
-        private MySqlDataReader _reader;
-
-        /*
-         * Function Open Database
-         */
-
-        private void OpenDatabase()
-        {
-            // Open the database
-            DatabaseConnection.Open();
-        }
-
-        /// <summary>
-        ///     Function Close Database
-        /// </summary>
-        /// <returns></returns>
-        private void CloseDatabase()
-        {
-            DatabaseConnection.Close();
-        }
-
         /// <summary>
         ///     Function Query All Account in Database
         /// </summary>
@@ -50,23 +25,23 @@ namespace SecurityApplication.Model
             var accountList = new List<Account>();
 
             // Prepare the query
-            var commandDatabase = new MySqlCommand(ConstantVariable.QueryAccount, DatabaseConnection);
+            var commandDatabase = new MySqlCommand(ConstantVariable.QueryAccount, DatabaseConnect.DatabaseConnection);
 
             try
             {
                 // Open Database
-                OpenDatabase();
+                DatabaseConnect.OpenDatabase();
 
                 // Execute the query
-                _reader = commandDatabase.ExecuteReader();
+                var reader = commandDatabase.ExecuteReader();
 
-                if (_reader.HasRows)
+                if (reader.HasRows)
                 {
-                    while (_reader.Read())
+                    while (reader.Read())
                     {
                         //ID 0, USERNAME 1, PASSWORD 2
-                        var userName = _reader.GetString(1);
-                        var password = _reader.GetString(2);
+                        var userName = reader.GetString(1);
+                        var password = reader.GetString(2);
 
                         // Load to new account
                         var account = new Account(userName, password);
@@ -77,7 +52,7 @@ namespace SecurityApplication.Model
                 }
 
                 // Close Database
-                CloseDatabase();
+                DatabaseConnect.CloseDatabase();
             }
 
             catch (Exception ex)
@@ -102,30 +77,30 @@ namespace SecurityApplication.Model
             var account = new Account();
 
             // Prepare the query
-            var commandDatabase = new MySqlCommand(ConstantVariable.QueryFindAccount, DatabaseConnection);
+            var commandDatabase = new MySqlCommand(ConstantVariable.QueryFindAccount, DatabaseConnect.DatabaseConnection);
             commandDatabase.Parameters.AddWithValue("@USERNAME", username);
             try
             {
                 // Open Database
-                OpenDatabase();
+                DatabaseConnect.OpenDatabase();
 
                 // Execute the query
-                _reader = commandDatabase.ExecuteReader();
+                var reader = commandDatabase.ExecuteReader();
 
-                if (_reader.HasRows)
+                if (reader.HasRows)
                 {
-                    while (_reader.Read())
+                    while (reader.Read())
                     {
                         //ID 0, USERNAME 1, PASSWORD 2
-                        var userName = _reader.GetString(1);
-                        var password = _reader.GetString(2);
+                        var userName = reader.GetString(1);
+                        var password = reader.GetString(2);
 
                         account = new Account(userName, password);
                     }
                 }
 
                 // Close Database
-                CloseDatabase();
+                DatabaseConnect.CloseDatabase();
             }
 
             catch (Exception ex)
@@ -140,33 +115,37 @@ namespace SecurityApplication.Model
             return account;
         }
 
+        /// <summary>
+        /// Function Count all Account in database
+        /// </summary>
+        /// <returns></returns>
         public int CountAccount()
         {
             // Count Number of Account
             int count = 0;
 
             // Prepare the query
-            var commandDatabase = new MySqlCommand(ConstantVariable.QueryCountAccount, DatabaseConnection);
+            var commandDatabase = new MySqlCommand(ConstantVariable.QueryCountAccount, DatabaseConnect.DatabaseConnection);
 
             try
             {
                 // Open Database
-                OpenDatabase();
+                DatabaseConnect.OpenDatabase();
 
                 // Execute the query
-                _reader = commandDatabase.ExecuteReader();
+                var reader = commandDatabase.ExecuteReader();
 
-                if (_reader.HasRows)
+                if (reader.HasRows)
                 {
-                    while (_reader.Read())
+                    while (reader.Read())
                     {
                         //ID 0, USERNAME 1, PASSWORD 2
-                        count = _reader.GetInt16(0);
+                        count = reader.GetInt16(0);
                     }
                 }
 
                 // Close Database
-                CloseDatabase();
+                DatabaseConnect.CloseDatabase();
             }
 
             catch (Exception ex)

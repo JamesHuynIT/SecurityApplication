@@ -72,7 +72,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Account.cs" />
-    <Compile Include="Model\Database.cs" />
+    <Compile Include="Entity\Car.cs" />
+    <Compile Include="Model\DatabaseAccount.cs" />
+    <Compile Include="Model\DatabaseCar.cs" />
+    <Compile Include="Model\DatabaseConnect.cs" />
     <Compile Include="Util\ConstantVariable.cs" />
     <Compile Include="Util\LogApp.cs" />
     <Compile Include="View\AddCarFrame.cs">

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SecurityApplication.Entity;
 using SecurityApplication.Model;
 
@@ -11,7 +10,7 @@ namespace UnitTestProject
         [TestMethod]
         public void TestMethodFindAccountCorrect()
         {
-            var database = new Database();
+            var database = new DatabaseAccount();
             string username = "nhanhtt";
             string password = "827ccb0eea8a706c4c34a16891f84e7b";
 
@@ -24,7 +23,7 @@ namespace UnitTestProject
         [TestMethod]
         public void TestMethodFindAccountWrong()
         {
-            var database = new Database();
+            var database = new DatabaseAccount();
             string username = "nhanhtt";
             string password = "12345";
 
@@ -37,7 +36,7 @@ namespace UnitTestProject
         [TestMethod]
         public void TestMethodLoad_CountAccount()
         {
-            var database = new Database();
+            var database = new DatabaseAccount();
 
             var actual = database.LoadAccount();
             var expected = database.CountAccount();

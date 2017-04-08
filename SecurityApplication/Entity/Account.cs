@@ -14,7 +14,14 @@
             Password = "";
         }
 
+        /// <summary>
+        /// Variable username to store username of each every account
+        /// </summary>
         private string Username { get; }
+
+        /// <summary>
+        /// Variable password to store password of each every account
+        /// </summary>
         private string Password { get; }
 
         /*
