@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BED4327A-7A24-4B33-9CEC-168B16BBD4A7}</ProjectGuid>
+    <ProjectGuid>{64E9F215-3034-4A48-AD40-261F0F0D5BBB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UnitTestProject</RootNamespace>
@@ -53,9 +53,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AccountTest.cs" />
+    <Compile Include="CarTest.cs" />
     <Compile Include="DatabaseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CarTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SecurityApplication\SecurityApplication.csproj">

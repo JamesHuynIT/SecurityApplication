@@ -15,8 +15,12 @@
         /// <summary>
         /// Variable carName to store name of each every car
         /// </summary>
-        public string UserName { get; }
+        public string UserNameCar { get; }
 
+        /// <summary>
+        /// Variable carName to store name of each every car
+        /// </summary>
+        public string UserName { get; }
 
         /// <summary>
         /// Variable password to store password of each every car
@@ -24,17 +28,19 @@
         public string Password { get; }
 
         /// <summary>
-        /// Function constructor Car with 3 parameter
+        /// Function constructor Car with 5 parameter
         /// </summary>
+        /// <param name="userName"></param>
         /// <param name="hostName"></param>
         /// <param name="displayName"></param>
-        /// <param name="userName"></param>
+        /// <param name="userNameCar"></param>
         /// <param name="password"></param>
-        public Car(string hostName, string displayName, string userName, string password)
+        public Car(string userName, string hostName, string displayName, string userNameCar, string password)
         {
+            UserName = userName;
             HostName = hostName;
             DisplayName = displayName;
-            UserName = userName;
+            UserNameCar = userNameCar;
             Password = password;
 
         }
@@ -44,9 +50,10 @@
         /// </summary>
         public Car()
         {
+            UserName = "";
             HostName = "";
             DisplayName = "";
-            UserName = "";
+            UserNameCar = "";
             Password = "";
 
         }
@@ -65,7 +72,7 @@
             if (HostName.Equals(car.HostName)) return 1;
             else
             {
-                if (UserName.Equals(car.UserName)) return 2;
+                if (UserNameCar.Equals(car.UserNameCar)) return 2;
                 else
                 {
                     return 0;

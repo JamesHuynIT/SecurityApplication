@@ -18,12 +18,17 @@ namespace SecurityApplication.Model
         }
 
         /// <summary>
-        ///     Function Close Database
+        /// Function Close Database
         /// </summary>
         /// <returns></returns>
         public static void CloseDatabase()
         {
             DatabaseConnection.Close();
+        }
+
+        public static void RollBack()
+        {
+            DatabaseConnection.BeginTransaction().Rollback();
         }
     }
 }

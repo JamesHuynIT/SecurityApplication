@@ -43,5 +43,15 @@ namespace UnitTestProject
 
             Assert.AreEqual(expected, actual.Count);
         }
+
+        [TestMethod]
+        public void TestMethodInsertCar()
+        {
+            var database = new DatabaseCar();
+            var car = new Car("nhanhtt", "abc", "abc", "nhanhuynh", "12345");
+
+            var actual = database.AddNewCar(car);
+            Assert.IsTrue(actual);
+        }
     }
 }

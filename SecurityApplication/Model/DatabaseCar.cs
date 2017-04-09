@@ -167,9 +167,10 @@ namespace SecurityApplication.Model
         {
             // Prepare the query
             var commandDatabase = new MySqlCommand(ConstantVariable.QueryAddNewCar, DatabaseConnect.DatabaseConnection);
-            commandDatabase.Parameters.AddWithValue("@HOST_NAME", newCar.HostName);
-            commandDatabase.Parameters.AddWithValue("@DISPLAY_NAME", newCar.DisplayName);
             commandDatabase.Parameters.AddWithValue("@USERNAME", newCar.UserName);
+            commandDatabase.Parameters.AddWithValue("@HOST_NAME_CAR", newCar.HostName);
+            commandDatabase.Parameters.AddWithValue("@DISPLAY_NAME", newCar.DisplayName);
+            commandDatabase.Parameters.AddWithValue("@USERNAME_CAR", newCar.UserNameCar);
             commandDatabase.Parameters.AddWithValue("@PASSWORD", newCar.Password);
 
             // Insert success or not

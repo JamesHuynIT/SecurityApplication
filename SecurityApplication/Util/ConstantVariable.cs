@@ -31,7 +31,7 @@
         public static string QueryCountCar = "SELECT COUNT(*) FROM CAR";
 
         // Query Add New Car
-        public static string QueryAddNewCar = "INSERT INTO CAR(HOST_NAME, DISPLAY_NAME, USERNAME, PASSWORD) VALUES (@HOST_NAME, @DISPLAY_NAME, @USERNAME, @PASSWORD)";
+        public static string QueryAddNewCar = "INSERT INTO CAR(USERNAME, HOST_NAME_CAR, DISPLAY_NAME, USERNAME_CAR, PASSWORD) VALUES (@USERNAME, @HOST_NAME, @DISPLAY_NAME, @USERNAME_CAR, @PASSWORD)";
 
         // Message Error Account
         public static string MesageErrorAccount = "Sorry account doesn't exist!";
