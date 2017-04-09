@@ -10,12 +10,14 @@ namespace SecurityApplication.View
         /*
          * Declare variable using in this Form
          */
-
         // Seriable Port for listening Port of Arduino
         private SerialPort _serialPort;
 
-        public MainFrame()
+        private string UserName;
+
+        public MainFrame(string userName)
         {
+            UserName = userName;
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
             //OpenPort();
@@ -57,7 +59,7 @@ namespace SecurityApplication.View
 
         private void addNewCarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var addCarFrame = new AddCarFrame();
+            var addCarFrame = new AddCarFrame(UserName);
             addCarFrame.ShowDialog();
         }
     }

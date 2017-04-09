@@ -8,8 +8,12 @@ namespace SecurityApplication.View
 {
     public partial class AddCarFrame : Form
     {
-        public AddCarFrame()
+        // Gobal string username
+        private readonly string _userName;
+
+        public AddCarFrame(string userName)
         {
+            _userName = userName;
             InitializeComponent();
         }
 
@@ -25,7 +29,7 @@ namespace SecurityApplication.View
             var userName = txtUserName.Text;
             var password = Md5Convert.Md5Parse(txtPassword.Text);
 
-            var car = new Car(hostName, displayName, userName, password);
+            var car = new Car(_userName, hostName, displayName, userName, password);
 
             var database = new DatabaseCar();
 

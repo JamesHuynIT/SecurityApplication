@@ -1,0 +1,10 @@
+D:\GitHub\SecurityApplication\UnitTestProject\bin\Debug\UnitTestProject.dll
+D:\GitHub\SecurityApplication\UnitTestProject\bin\Debug\UnitTestProject.pdb
+D:\GitHub\SecurityApplication\UnitTestProject\bin\Debug\SecurityApplication.exe
+D:\GitHub\SecurityApplication\UnitTestProject\bin\Debug\AxInterop.AXVLC.dll
+D:\GitHub\SecurityApplication\UnitTestProject\bin\Debug\MySql.Data.dll
+D:\GitHub\SecurityApplication\UnitTestProject\bin\Debug\Interop.AXVLC.dll
+D:\GitHub\SecurityApplication\UnitTestProject\bin\Debug\SecurityApplication.pdb
+D:\GitHub\SecurityApplication\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
+D:\GitHub\SecurityApplication\UnitTestProject\obj\Debug\UnitTestProject.dll
+D:\GitHub\SecurityApplication\UnitTestProject\obj\Debug\UnitTestProject.pdb

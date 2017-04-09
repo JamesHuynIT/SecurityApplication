@@ -43,7 +43,7 @@ namespace SecurityApplication.View
                 var compareNum = account.CompareAccount(accountDatabase);
                 if (1 == compareNum)
                 {
-                    var mainFrame = new MainFrame();
+                    var mainFrame = new MainFrame(username);
                     Hide();
                     mainFrame.ShowDialog();
                 }

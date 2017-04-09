@@ -52,6 +52,9 @@ namespace UnitTestProject
 
             var actual = database.AddNewCar(car);
             Assert.IsTrue(actual);
+
+            // Roll back database
+            database.RollBack();
         }
     }
 }

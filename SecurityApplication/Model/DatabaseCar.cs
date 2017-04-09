@@ -41,13 +41,14 @@ namespace SecurityApplication.Model
                 {
                     while (reader.Read())
                     {
-                        //ID 0, HOSTNAME 1, DISPLAYNAME 2, USERNAME 3, PASSWORD 4
-                        var hostName = reader.GetString(1);
-                        var displayName = reader.GetString(2);
-                        var userName = reader.GetString(3);
-                        var password = reader.GetString(4);
+                        //ID 0, USERNAME 1, HOSTNAME 2, DISPLAYNAME 3, USERNAME 4, PASSWORD 5
+                        var userName = reader.GetString(1);
+                        var hostName = reader.GetString(2);
+                        var displayName = reader.GetString(3);
+                        var userNameCar = reader.GetString(4);
+                        var password = reader.GetString(5);
 
-                        car = new Car(hostName, displayName, userName, password);
+                        car = new Car(userName, hostName, displayName, userNameCar, password);
                     }
                 }
 
@@ -88,13 +89,14 @@ namespace SecurityApplication.Model
                 {
                     while (reader.Read())
                     {
-                        //ID 0, HOSTNAME 1, DISPLAYNAME 2, USERNAME 3, PASSWORD 4
-                        var hostName = reader.GetString(1);
-                        var displayName = reader.GetString(2);
-                        var userName = reader.GetString(3);
-                        var password = reader.GetString(4);
+                        //ID 0, USERNAME 1, HOSTNAME 2, DISPLAYNAME 3, USERNAME 4, PASSWORD 5
+                        var userName = reader.GetString(1);
+                        var hostName = reader.GetString(2);
+                        var displayName = reader.GetString(3);
+                        var userNameCar = reader.GetString(4);
+                        var password = reader.GetString(5);
 
-                        var car = new Car(hostName, displayName, userName, password);
+                        var car = new Car(userName, hostName, displayName, userNameCar, password);
                         carList.Add(car);
                     }
                 }
@@ -167,11 +169,12 @@ namespace SecurityApplication.Model
         {
             // Prepare the query
             var commandDatabase = new MySqlCommand(ConstantVariable.QueryAddNewCar, DatabaseConnect.DatabaseConnection);
+
             commandDatabase.Parameters.AddWithValue("@USERNAME", newCar.UserName);
             commandDatabase.Parameters.AddWithValue("@HOST_NAME_CAR", newCar.HostName);
             commandDatabase.Parameters.AddWithValue("@DISPLAY_NAME", newCar.DisplayName);
             commandDatabase.Parameters.AddWithValue("@USERNAME_CAR", newCar.UserNameCar);
-            commandDatabase.Parameters.AddWithValue("@PASSWORD", newCar.Password);
+            commandDatabase.Parameters.AddWithValue("@PASSWORD_CAR", Md5Convert.Md5Parse(newCar.Password));
 
             // Insert success or not
             var insertBool = false;
@@ -204,6 +207,34 @@ namespace SecurityApplication.Model
                 LogApp.LogDatabaseError(ex.Message);
 
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Function RollBack
+        /// </summary>
+        public void RollBack()
+        {
+
+            try
+            {
+                MySqlConnection databaseConnection = new MySqlConnection(ConstantVariable.Connectstring);
+                databaseConnection.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand();
+                MySqlTransaction mySqlTransaction = databaseConnection.BeginTransaction(); 
+                mySqlCommand.Connection = databaseConnection;
+                mySqlCommand.Transaction = mySqlTransaction;
+                mySqlTransaction.Rollback();
+                databaseConnection.Close();
+            }
+
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message, @"ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // Log to file database
+                LogApp.LogDatabaseError(ex.Message);
             }
         }
     }
