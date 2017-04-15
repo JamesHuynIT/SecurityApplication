@@ -213,19 +213,25 @@ namespace SecurityApplication.Model
         /// <summary>
         /// Function RollBack
         /// </summary>
-        public void RollBack()
+        /// <param name="tableName"></param>
+        public void TruncateTable(string tableName)
         {
-
             try
             {
-                MySqlConnection databaseConnection = new MySqlConnection(ConstantVariable.Connectstring);
-                databaseConnection.Open();
-                MySqlCommand mySqlCommand = new MySqlCommand();
-                MySqlTransaction mySqlTransaction = databaseConnection.BeginTransaction(); 
-                mySqlCommand.Connection = databaseConnection;
-                mySqlCommand.Transaction = mySqlTransaction;
-                mySqlTransaction.Rollback();
-                databaseConnection.Close();
+                // Prepare the query statement
+                string queryTruncateTable = ConstantVariable.QueryTruncateTable + tableName;
+
+                // Prepare the query
+                var commandDatabase = new MySqlCommand(queryTruncateTable, DatabaseConnect.DatabaseConnection);
+
+                // Open Database
+                DatabaseConnect.OpenDatabase();
+
+                // Execute the query
+                commandDatabase.ExecuteNonQuery();
+
+                // Close Database
+                DatabaseConnect.CloseDatabase();
             }
 
             catch (Exception ex)

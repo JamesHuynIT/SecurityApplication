@@ -2,15 +2,22 @@
 {
     public class ConstantVariable
     {
+        //===============================================RASPBERRY PORT=======================================================
+
         // Port Name
         public static readonly string Portname = "COM4";
 
         // Baud Rate
         public static readonly int Baudrate = 9600;
 
+        //===============================================DATABASE COMMANDS====================================================
+
         // Connect String 
         public static string Connectstring =
             "datasource=127.0.0.1;port=3306;username=root;password=;database=securitycamera;";
+
+        // Query Truncate Table
+        public static string QueryTruncateTable = "TRUNCATE TABLE ";
 
         // Query All Account
         public static string QueryAccount = "SELECT * FROM ACCOUNT";
@@ -33,6 +40,16 @@
         // Query Add New Car
         public static string QueryAddNewCar = "INSERT INTO CAR(USERNAME, HOST_NAME_CAR, DISPLAY_NAME, USERNAME_CAR, PASSWORD_CAR) VALUES (@USERNAME, @HOST_NAME_CAR, @DISPLAY_NAME, @USERNAME_CAR, @PASSWORD_CAR)";
 
+        //==============================================TABLE NAME============================================================
+
+        // Table Account
+        public static readonly string TableAccount = "Account";
+
+        // Table Car
+        public static readonly string TableCar = "Car";
+
+        //=============================================MESSAGE OF APPLICATION=================================================
+
         // Message Error Account
         public static string MesageErrorAccount = "Sorry account doesn't exist!";
 
@@ -53,5 +70,6 @@
 
         // File Log Application
         public static string LogApplcation = "LogSecurityApplcation.txt";
+
     }
 }

@@ -70,14 +70,8 @@
         public int CompareCar(Car car)
         {
             if (HostName.Equals(car.HostName)) return 1;
-            else
-            {
-                if (UserNameCar.Equals(car.UserNameCar)) return 2;
-                else
-                {
-                    return 0;
-                }
-            }
+            if (UserNameCar.Equals(car.UserNameCar)) return 2;
+            return 0;
         }
 
     }

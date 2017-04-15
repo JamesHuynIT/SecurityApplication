@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SecurityApplication.Entity;
 using SecurityApplication.Model;
+using SecurityApplication.Util;
 
 namespace UnitTestProject
 {
@@ -53,8 +54,8 @@ namespace UnitTestProject
             var actual = database.AddNewCar(car);
             Assert.IsTrue(actual);
 
-            // Roll back database
-            database.RollBack();
+            // Detele all
+            database.TruncateTable(ConstantVariable.TableCar);
         }
     }
 }

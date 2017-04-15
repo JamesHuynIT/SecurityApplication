@@ -25,10 +25,5 @@ namespace SecurityApplication.Model
         {
             DatabaseConnection.Close();
         }
-
-        public static void RollBack()
-        {
-            DatabaseConnection.BeginTransaction().Rollback();
-        }
     }
 }
